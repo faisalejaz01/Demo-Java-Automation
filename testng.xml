@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.trainingserver.rest.TestActors"/>
+      <class name="com.trainingserver.soapservices.TestSoapService_Actors"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

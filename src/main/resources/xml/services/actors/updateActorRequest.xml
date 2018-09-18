@@ -1,0 +1,12 @@
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:my="my-namespace">
+	<soapenv:Header />
+	<soapenv:Body>
+		<my:updateActorRequest>
+			<my:actor_id></my:actor_id>
+			<my:newFirstName></my:newFirstName>
+			<my:newLastName></my:newLastName>
+		</my:updateActorRequest>
+	</soapenv:Body>
+</soapenv:Envelope>
