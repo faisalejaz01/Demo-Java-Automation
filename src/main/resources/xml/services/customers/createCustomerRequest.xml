@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:createCustomerRequest>
+         <my:storeId>?</my:storeId>
+         <my:firstName>?</my:firstName>
+         <my:lastName>?</my:lastName>
+         <my:email>?</my:email>
+         <my:addressId>?</my:addressId>
+         <my:active>?</my:active>
+      </my:createCustomerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

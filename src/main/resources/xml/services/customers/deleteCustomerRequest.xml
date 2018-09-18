@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:deleteCustomerRequest>
+         <my:customerId>?</my:customerId>
+      </my:deleteCustomerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
