@@ -11,18 +11,18 @@ public class GetActorsById extends Actors {
 		File xml = new File("src/main/resources/xml/services/actors/getActorById.xml");
 
 		setRequestDocument(XMLTools.makeXMLDocument(xml));
-		System.out.println("XML DOC: " + xml); 
-		
+		// System.out.println("XML DOC: " + xml);
+
 		setOperationName("getActorsByIdRequest");
 		removeComments();
 		removeWhiteSpace();
 
 	}
-	
+
 	public int getNumberOfResults() {
-		return getNumberOfRequestNodesByXPath("/Envelope/Body/getActorsByIdResponse/actor");
+		return getNumberOfResponseNodesByXPath("/Envelope/Body/getActorsByIdResponse/actor");
 	}
-	
+
 	public void setActorId(String actorId) {
 		setRequestNodeValueByXPath("/Envelope/Body/getActorsByIdRequest/actor_id", actorId);
 	}

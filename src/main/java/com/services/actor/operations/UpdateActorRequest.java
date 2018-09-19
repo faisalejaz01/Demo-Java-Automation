@@ -20,7 +20,7 @@ public class UpdateActorRequest extends Actors{
 		}
 		
 		public int getNumberOfResults() {
-			return getNumberOfRequestNodesByXPath("/soapenv:Envelope/soapenv:Body/my:updateActorRequest");
+			return getNumberOfResponseNodesByXPath("/Envelope/Body/updateActorRequest/actor");
 		}
 		
 		public void setActorId(String actorId) {

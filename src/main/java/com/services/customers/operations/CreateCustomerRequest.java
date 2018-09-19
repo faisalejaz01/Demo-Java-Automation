@@ -26,7 +26,7 @@ public class CreateCustomerRequest extends Customers {
 	public void setStoreId(String addressId) {
 		setRequestNodeValueByXPath("/Envelope/Body/createCustomerRequest/storeId", addressId);
 	}
-	
+
 	public void setCustomerFirstName(String firstName) {
 		setRequestNodeValueByXPath("/Envelope/Body/createCustomerRequest/firstName", firstName);
 	}
@@ -34,13 +34,13 @@ public class CreateCustomerRequest extends Customers {
 	public void setCustomerLastName(String lastName) {
 		setRequestNodeValueByXPath("/Envelope/Body/createCustomerRequest/lastName", lastName);
 	}
-	
+
 	public void setEmail(String email) {
 		setRequestNodeValueByXPath("/Envelope/Body/createCustomerRequest/email", email);
-	}	
-	
+	}
+
 	public void setActive(String active) {
 		setRequestNodeValueByXPath("/Envelope/Body/createCustomerRequest/active", active);
-	}	
-	
+	}
+
 }
