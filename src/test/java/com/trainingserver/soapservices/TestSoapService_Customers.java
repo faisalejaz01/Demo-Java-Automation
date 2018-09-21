@@ -8,6 +8,8 @@ import com.services.customers.operations.DeleteCustomerRequest;
 
 public class TestSoapService_Customers {
 
+	private String excelFileLocation;
+
 	@Test(priority = 1)
 	public void createCustomerRequestTest() {
 
@@ -42,6 +44,8 @@ public class TestSoapService_Customers {
 
 	@Test(priority = 2)
 	public void deleteCustomerRequestTest() {
+		excelFileLocation = "src/main/resources/excelsheets/deleteCustomerRequest.xlsx";
+
 		String customerId = "609";
 
 		DeleteCustomerRequest customer = new DeleteCustomerRequest();
@@ -56,5 +60,8 @@ public class TestSoapService_Customers {
 				customer.getNumberOfResults() + " results were returned", customer);
 		TestReporter.logAPI((customer.getNumberOfResults() != 0),
 				customer.getNumberOfResults() + " results were returned", customer);
+
+		TestReporter.assertTrue(customer.validateResponse(excelFileLocation, "Main"),
+				"Validate Response for testGetActorsById");
 	}
 }
