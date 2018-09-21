@@ -12,9 +12,7 @@ public class Actors {
 	private String path = TrainingServerRest.baseURL + "/rest/actors";
 
 	public RestResponse createActor(Actor actor) {
-		return restService.sendPostRequest(path, 
-				HeaderType.JSON, 
-				RestService.getJsonFromObject(actor));
+		return restService.sendPostRequest(path, HeaderType.JSON, RestService.getJsonFromObject(actor));
 	}
 }
 

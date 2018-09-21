@@ -1,0 +1,24 @@
+{
+	"filmId": 1087,
+	"title": "Rest Api",
+	"description": "Rest Api Testing",
+	"releaseYear": 2018,
+	"language": "English",
+	"originalLanguage": "English",
+	"rentalDuration": 2,
+	"rentalRate": 4.99,
+	"length": 60,
+	"replacementCost": 9.99,
+	"rating": "R",
+	"specialFeatures": "{Trailers,\"Deleted Scenes\"}",
+	"category": "Horror",
+	"actors": [{
+		"actorId": 2,
+		"firstName": "NICK",
+		"lastName": "WAHLBERG"
+	}, {
+		"actorId": 1,
+		"firstName": "IRON",
+		"lastName": "MAN"
+	}]
+}

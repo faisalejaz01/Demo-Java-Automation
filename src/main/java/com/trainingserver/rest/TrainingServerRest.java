@@ -12,6 +12,6 @@ public class TrainingServerRest {
 	}
 
 	public static Object films() {
-	return  new Films();
+		return new Films();
 	}
 }

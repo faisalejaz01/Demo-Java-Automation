@@ -2,10 +2,10 @@ package com.trainingserver.rest.films.objects;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.google.gson.annotations.SerializedName;
+
 import com.trainingserver.rest.actors.objects.Actor;
 
-public class Film extends Actor {
+public class Film2 extends Actor {
 
 	int filmId;
 	String title = "";
@@ -24,9 +24,9 @@ public class Film extends Actor {
 
 	String specialFeatures = "";
 
-	String[] actors;
+	List<Actor> actors = new ArrayList<>();
 
-	public Film() {
+	public Film2() {
 
 	}
 
@@ -134,12 +134,12 @@ public class Film extends Actor {
 		this.specialFeatures = specialFeatures;
 	}
 
-	public String[] getActors() {
+	public List<Actor> getActors() {
 
 		return actors;
 	}
 
-	public void setActors(String[] act) {
-		actors = act.clone();
+	public void setActors(List<Actor> actors) {
+		this.actors = actors;
 	}
 }

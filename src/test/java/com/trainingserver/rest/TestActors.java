@@ -19,7 +19,7 @@ public class TestActors {
 		actor.setLastName(lastName);
 
 		RestResponse response = TrainingServerRest.actors().createActor(actor);
-		//System.out.print(response.getResponse());
+		// System.out.print(response.getResponse());
 		actor = response.mapJSONToObject(Actor.class);
 
 		TestReporter.logAPI(response.getStatusCode() == 201, "Validating correct response", response);

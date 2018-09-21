@@ -1,26 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.orasi</groupId>
 	<artifactId>Demo</artifactId>
 	<version>1.0.1</version>
-<properties>
-		
+	<properties>
+
 		<!-- Dependancies -->
-		<allureTestngAdaptorVersion>1.5.4</allureTestngAdaptorVersion>			
+		<allureTestngAdaptorVersion>1.5.4</allureTestngAdaptorVersion>
 		<apacheCommonsIOVersion>2.4</apacheCommonsIOVersion>
-		<apacheCommonsLang3Version>3.7</apacheCommonsLang3Version>	
+		<apacheCommonsLang3Version>3.7</apacheCommonsLang3Version>
 		<aspectjVersion>1.8.13</aspectjVersion>
-		<jacksonVersion>2.9.4</jacksonVersion>	 
+		<jacksonVersion>2.9.4</jacksonVersion>
 		<jsonVersion>20180130</jsonVersion>
-		<jUnitVersion>4.12</jUnitVersion>    
-		<sauceLabsVersion>2.1.23</sauceLabsVersion>  	
-		<seleniumVersion>3.7.0</seleniumVersion>    
-		<testNgVersion>6.8.21</testNgVersion>    
+		<jUnitVersion>4.12</jUnitVersion>
+		<sauceLabsVersion>2.1.23</sauceLabsVersion>
+		<seleniumVersion>3.7.0</seleniumVersion>
+		<testNgVersion>6.8.21</testNgVersion>
 		<poiXmlVersion>3.12</poiXmlVersion>
-		<xmlApisVersion>1.4.01</xmlApisVersion>	<!-- IMPORTANT!: Please verify release date. Versions are not in order 
-												Version 2.x are outdated being release in 2002 -->
-		
+		<xmlApisVersion>1.4.01</xmlApisVersion>	<!-- IMPORTANT!: Please verify release date. Versions are not in order Version 
+			2.x are outdated being release in 2002 -->
+
 		<!-- Build environment -->
 		<javaVersion>1.8</javaVersion>
 		<mavenCompilerPluginVersion>3.1</mavenCompilerPluginVersion>
@@ -28,8 +29,8 @@
 		<mavenJettyPluginVersion>9.2.9.v20150224</mavenJettyPluginVersion>
 		<mavenSurefilePluginVersion>2.12.4</mavenSurefilePluginVersion>
 		<mavenSurefileReportPluginVersion>2.12.4</mavenSurefileReportPluginVersion>
-		
-		<!-- CICD parameters -->  
+
+		<!-- CICD parameters -->
 		<jenkinsBuildId>${env.BUILD_ID}</jenkinsBuildId>
 		<jenkinsBuildNumber>${env.BUILD_NUMBER}</jenkinsBuildNumber>
 		<jenkinsBuildTag>${env.BUILD_TAG}</jenkinsBuildTag>
@@ -79,13 +80,19 @@
 			<version>${testNgVersion}</version>
 		</dependency>
 		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <version>${jUnitVersion}</version>
-		    <scope>test</scope>
-		</dependency>		
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${jUnitVersion}</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- End Selenium requirements -->
 		<!-- Start Allure Reports requirements -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.6.3</version>
+		</dependency>
+
 		<dependency>
 			<groupId>ru.yandex.qatools.allure</groupId>
 			<artifactId>allure-testng-adaptor</artifactId>
@@ -124,14 +131,14 @@
 		</dependency>
 
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-lang3</artifactId>
-		    <version>${apacheCommonsLang3Version}</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apacheCommonsLang3Version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.directory.studio</groupId>
-		    <artifactId>org.apache.commons.io</artifactId>
-		    <version>${apacheCommonsIOVersion}</version>
+			<groupId>org.apache.directory.studio</groupId>
+			<artifactId>org.apache.commons.io</artifactId>
+			<version>${apacheCommonsIOVersion}</version>
 		</dependency>
 		<!-- End General requirements -->
 
@@ -151,10 +158,10 @@
 
 		<!-- Start REST Core requirements: Up-to-date as of 02-06-2018 -->
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-core</artifactId>
-		    <version>${jacksonVersion}</version>
-		</dependency>		
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jacksonVersion}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -166,11 +173,15 @@
 			<version>${jacksonVersion}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.json</groupId>
-		    <artifactId>json</artifactId>
-		    <version>${jsonVersion}</version>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${jsonVersion}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.cedarsoftware</groupId>
+			<artifactId>json-io</artifactId>
+			<version>4.5.0</version>
+		</dependency>
 		<!-- End REST Core requirements -->
 	</dependencies>
 
@@ -198,7 +209,7 @@
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjVersion}/aspectjweaver-${aspectjVersion}.jar"
 					</argLine>
 					<suiteXmlFiles>
-						<suiteXmlFile>${testNGSourceDirectory}/regression.xml</suiteXmlFile> 
+						<suiteXmlFile>${testNGSourceDirectory}/regression.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
 						<jenkinsOperatingSystem>${operatingSystem}</jenkinsOperatingSystem>
