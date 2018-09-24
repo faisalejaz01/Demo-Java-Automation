@@ -79,19 +79,21 @@ public class TestFilms {
 	public void deleteFilmTest() {
 		int count = 999;
 		
-	//	while (count<1200) {
+		//while (count<1050) {
 		int filmId = count;
 		
 		RestResponse response = ((Films) TrainingServerRest.films()).deleteFilm(filmId);
 				
-		System.out.println("Payload from object : ");
+		System.out.print("Payload : ");
 		System.out.println(response.getURL());		
 		
-		System.out.println("Server Response : ");
-		System.out.println(response.getResponse());
+		System.out.print("Server Response : ");
+		System.out.print(response.getResponse());
 
-		System.out.println("HTTP STATUS: " + response.getStatusCode());
+		System.out.println(", HTTP STATUS: " + response.getStatusCode() + "\n");
 		count++;
+		TestReporter.logAPI(response.getStatusCode() == 200, "Validating correct response", response);
+
 		//}
 		
 	}
