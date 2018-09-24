@@ -1,8 +1,5 @@
 package com.trainingserver.rest.films.objects;
 
-import java.util.ArrayList;
-import java.util.List;
-import com.google.gson.annotations.SerializedName;
 import com.trainingserver.rest.actors.objects.Actor;
 
 public class Film extends Actor {
