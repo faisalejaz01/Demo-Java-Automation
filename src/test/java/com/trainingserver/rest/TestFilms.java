@@ -13,7 +13,8 @@ import com.cedarsoftware.util.io.JsonWriter;
 
 public class TestFilms {
 
-	@Test
+	//@Test(priority = 1)
+	@Test(enabled = false)
 	public void createFilmTest() {
 
 		String title = "Rest Api";
@@ -73,4 +74,26 @@ public class TestFilms {
 		AssertJUnit.assertEquals(film2.getTitle(), title);
 
 	}
+	
+	@Test(priority = 2)
+	public void deleteFilmTest() {
+		int count = 999;
+		
+	//	while (count<1200) {
+		int filmId = count;
+		
+		RestResponse response = ((Films) TrainingServerRest.films()).deleteFilm(filmId);
+				
+		System.out.println("Payload from object : ");
+		System.out.println(response.getURL());		
+		
+		System.out.println("Server Response : ");
+		System.out.println(response.getResponse());
+
+		System.out.println("HTTP STATUS: " + response.getStatusCode());
+		count++;
+		//}
+		
+	}
+
 }
